@@ -1,0 +1,10 @@
+{
+  "eslint.enable": true,
+  "eslint.run": "onSave", // ESLint будет запускаться при сохранении
+  "prettier.requireConfig": true, // Требует конфигурационный файл для использования Prettier
+  "editor.formatOnSave": true, // Автоматическое форматирование при сохранении
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  } // Установить Prettier как форматировщик по умолчанию
+}

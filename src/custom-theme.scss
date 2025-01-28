@@ -1,0 +1,28 @@
+@use "@angular/material" as mat;
+
+// Определяем пользовательскую тему
+$theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$violet-palette,
+    ),
+    typography: (
+      brand-family: "Comic Sans",
+      bold-weight: 900,
+    ),
+    density: (
+      scale: -1,
+    ),
+  )
+);
+
+// Применяем тему, но внутри селектора (например, body)
+body {
+  @include mat.all-component-themes($theme);
+}
+
+.mat-mdc-card {
+  background-color: mat.get-theme-color($theme, surface);
+  color: mat.get-theme-color($theme, on-surface);
+}

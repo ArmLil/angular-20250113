@@ -20,13 +20,14 @@ export default [
 
   // TypeScript-specific ESLint configuration
   ...tseslint.configs.recommended,
-
+  prettier, // Добавляем Prettier в конфиг ESLint
   // Additional configuration for working with promises
   {
     plugins: {
       promise: promisePlugin, // Plugin for promises
     },
     rules: {
+      "prettier/prettier": "error", // Принудительно включаем Prettier
       "promise/always-return": "error",
       "promise/catch-or-return": "error",
       "newline-before-return": "error", // Enforces newline before return

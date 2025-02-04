@@ -1,2 +1,4 @@
-<app-header></app-header>
-<app-product-list></app-product-list>
+<app-header [config]="applicationConfig" (menuClick)="onMenuClick()" class="header"></app-header>
+<app-sidenav [(isSidenavOpened)]="isSidenavOpenedStore" class="container"></app-sidenav>
+
+<!-- <app-products-list></app-products-list> -->

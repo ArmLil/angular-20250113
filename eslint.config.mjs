@@ -1,7 +1,6 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
-import promisePlugin from "eslint-plugin-promise"; // Plugin for working with promises
 import angularEslintPlugin from "@angular-eslint/eslint-plugin"; // Correct import for Angular ESLint plugin
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -20,19 +19,6 @@ export default [
 
   // TypeScript-specific ESLint configuration
   ...tseslint.configs.recommended,
-  prettier, // Добавляем Prettier в конфиг ESLint
-  // Additional configuration for working with promises
-  {
-    plugins: {
-      promise: promisePlugin, // Plugin for promises
-    },
-    rules: {
-      "prettier/prettier": "error", // Принудительно включаем Prettier
-      "promise/always-return": "error",
-      "promise/catch-or-return": "error",
-      "newline-before-return": "error", // Enforces newline before return
-    },
-  },
 
   // Configuration for Angular-specific rules
   {

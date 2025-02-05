@@ -14,7 +14,7 @@ import { Product } from "../../../shared/products/product.interface";
 })
 export class CardComponent {
   readonly product = input.required<Product>();
-  readonly buy = output<Product["_id"]>();
+  readonly buy = output<Product>();
   onProductBuy(event: Event) {
     event.stopPropagation();
 
@@ -23,9 +23,11 @@ export class CardComponent {
     }
 
     console.log("Buy product");
+    this.buy.emit(this.product());
   }
 
   isStarActive(starIndex: number): boolean {
-    return !!this.product && this.product().rating >= starIndex;
+    const product = this.product();
+    return product && product.rating !== undefined && product.rating >= starIndex;
   }
 }

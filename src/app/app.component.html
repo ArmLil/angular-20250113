@@ -1,4 +1,14 @@
-<app-header [config]="applicationConfig" (menuClick)="onMenuClick()" class="header"></app-header>
-<app-sidenav [(isSidenavOpened)]="isSidenavOpenedStore" class="container"></app-sidenav>
+[userBusket]="userBusket"
+<app-header
+  [config]="applicationConfig"
+  (menuClick)="onMenuClick()"
+  [userBusket]="userBusket()"
+  class="header"
+></app-header>
+<app-sidenav
+  [(isSidenavOpened)]="isSidenavOpenedStore"
+  class="container"
+  (userBusket)="onUserBusket($event)"
+></app-sidenav>
 
 <!-- <app-products-list></app-products-list> -->

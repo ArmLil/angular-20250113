@@ -9,3 +9,7 @@ export interface Product {
   feedbacksCount: number;
   rating: number;
 }
+
+export interface ProductBuied extends Product {
+  quantity: number;
+}

@@ -4,5 +4,5 @@
   </mat-drawer>
 
   <!-- <button type="button" mat-button (click)="toggleSidenavOpened()">Toggle sidenav</button> -->
-  <app-product-list></app-product-list>
+  <app-product-list (userBusket)="onUserBusket($event)"></app-product-list>
 </mat-drawer-container>

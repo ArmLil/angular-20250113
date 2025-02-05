@@ -1,5 +1,7 @@
 <mat-grid-list cols="2" rowHeight="600px">
   @for (product of products; track product._id) {
-    <mat-grid-tile> <app-card [product]="product"></app-card></mat-grid-tile>
+    <mat-grid-tile>
+      <app-card [product]="product" (buy)="onProductBuy($event)"></app-card
+    ></mat-grid-tile>
   }
 </mat-grid-list>
